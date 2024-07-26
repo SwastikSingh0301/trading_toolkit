@@ -1,12 +1,13 @@
 from strategy_builder.common.constants import POSITION
+from common.constants import LOT_SIZE
 
 
 class TargetProfit:
     def get_profit(self, price_at_bid, ltp, position):
         if position == POSITION.SELL.value:
-            return price_at_bid - ltp
+            return (price_at_bid - ltp) * LOT_SIZE
         else:
-            return ltp - price_at_bid
+            return (ltp - price_at_bid) * LOT_SIZE
 
     def is_target_profit_reached(self, position, leg_bid_price=None, underlying_price_at_bid=None, ltp=None, underlying_ltp=None):
         raise NotImplementedError("Subclasses must implement this method")

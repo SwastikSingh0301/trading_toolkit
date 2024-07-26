@@ -42,14 +42,6 @@ class BackTester:
             pass
         return path
 
-    # def process_data(self, data):
-    #     data = data.sort_values(by='date')
-    #     grouped_by_date = data.groupby("date")
-    #     for date, date_group in grouped_by_date:
-    #         date_group = date_group.sort_values(by="time")
-    #         time_group = date_group.groupby("time")
-
-
     def process_date(self, date_string):
         date_format = "%Y-%m-%d"
 

@@ -47,4 +47,15 @@ class STRIKE_CRITERIA(Enum):
     SYNTHETIC_FUTURE = "synthetic_future"
     ATM_STRADDLE_PREMIUM_PERCENT = "atm_straddle_premium_percent"
 
+
+class NUMBER_OF_SHARES_PER_LOT(Enum):
+    NIFTY = 50
+    FINNIFTY = 50
+    SENSEX = 50
+    MIDCPNIFTY = 50
+    BANKNIFTY = 50
+    BANKEX = 50
+
+
 STRIKE_PRICE_DELTA = 50
+

@@ -22,11 +22,12 @@ class StopLossUnderlyingPoints:
 
 class StopLossPercent(StopLoss):
     def __init__(self, value):
-        self.stop_loss_percent = value
+        self.stop_loss_percent = float(value)
 
     def is_stop_loss_reached(self, position, leg_bid_price=None, underlying_price_at_bid=None, ltp=None, underlying_ltp=None):
         loss = self.get_loss(leg_bid_price, ltp, position)
-        loss_percent = (loss * 100) / leg_bid_price
+        loss_percent = float((loss * 100) / leg_bid_price)
+        print(loss_percent > self.stop_loss_percent)
         return loss_percent > self.stop_loss_percent
 
 
